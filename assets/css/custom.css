@@ -1,0 +1,1516 @@
+:root {
+  --lot-navy: #051321;
+  --lot-navy-soft: #0a2943;
+  --lot-blue: #167dff;
+  --lot-blue-deep: #0b61ce;
+  --lot-teal: #14d0c3;
+  --lot-cyan: #93fff4;
+  --lot-bg: #eef6ff;
+  --lot-border: #d5e7f7;
+  --lot-text: #587089;
+  --lot-heading: #0d2338;
+  --lot-white: #ffffff;
+}
+
+body,
+p,
+a,
+button,
+span,
+input,
+textarea,
+select,
+li {
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei", "Noto Sans SC", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei", "Noto Sans SC", sans-serif;
+  color: var(--lot-heading);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+body {
+  position: relative;
+  color: var(--lot-text);
+  background:
+    radial-gradient(circle at 12% -6%, rgba(22, 125, 255, 0.16), transparent 24%),
+    radial-gradient(circle at 88% 8%, rgba(20, 208, 195, 0.14), transparent 20%),
+    radial-gradient(circle at 50% 42%, rgba(137, 215, 255, 0.08), transparent 34%),
+    linear-gradient(180deg, #edf6ff 0%, #f7fbff 28%, #eef7ff 100%);
+}
+
+body::before {
+  position: fixed;
+  content: "";
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(22, 125, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(22, 125, 255, 0.045) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.34), rgba(0, 0, 0, 0.12) 60%, transparent 88%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+body::after {
+  position: fixed;
+  content: "";
+  left: -120px;
+  bottom: -120px;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(20, 208, 195, 0.18), transparent 68%);
+  filter: blur(12px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+header {
+  position: relative;
+  z-index: 20;
+}
+
+main,
+footer {
+  position: relative;
+}
+
+p {
+  color: var(--lot-text);
+  line-height: 1.9;
+}
+
+*::selection {
+  background: var(--lot-teal);
+  color: var(--lot-white);
+}
+
+#scroll a {
+  background: var(--lot-blue);
+  border-color: var(--lot-blue);
+}
+
+.z-btn {
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--lot-blue) 0%, #0f8ed8 100%);
+  border-color: rgba(125, 243, 234, 0.18);
+  box-shadow: 0 18px 38px rgba(11, 99, 206, 0.2);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.z-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 22px 44px rgba(11, 99, 206, 0.24);
+  color: var(--lot-blue);
+}
+
+.z-btn-border {
+  background: transparent;
+}
+
+.lot-home .z-btn-border {
+  color: var(--lot-white);
+  border-color: rgba(255, 255, 255, 0.34);
+}
+
+.lot-home .z-btn-border:hover {
+  background: var(--lot-white);
+  border-color: var(--lot-white);
+  color: var(--lot-navy);
+}
+
+.lot-inner .z-btn-border {
+  color: var(--lot-heading);
+  border-color: var(--lot-border);
+}
+
+.lot-inner .z-btn-border:hover {
+  background: var(--lot-blue);
+  border-color: var(--lot-blue);
+  color: var(--lot-white);
+}
+
+.section__title span,
+.section__title-3 span,
+.section-title span {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--lot-teal);
+  font-family: inherit;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.section__title span::before,
+.section__title-3 span::before,
+.section-title span::before {
+  content: "";
+  width: 36px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--lot-cyan) 100%);
+}
+
+.header__area.header__transparent {
+  z-index: 1002;
+}
+
+.header__bottom {
+  position: relative;
+  z-index: 1002;
+  background: linear-gradient(180deg, rgba(4, 17, 32, 0.86), rgba(5, 21, 38, 0.72));
+  border-bottom: 1px solid rgba(147, 255, 244, 0.12);
+  box-shadow: 0 16px 48px rgba(1, 10, 20, 0.18);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.lot-brand {
+  display: inline-flex;
+  align-items: center;
+}
+
+.lot-brand-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.lot-brand-mark {
+  position: relative;
+  flex: 0 0 40px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 13px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04));
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
+}
+
+.lot-brand-mark::before,
+.lot-brand-mark::after {
+  position: absolute;
+  content: "";
+}
+
+.lot-brand-mark::before {
+  left: 9px;
+  bottom: 9px;
+  width: 13px;
+  height: 13px;
+  border-left: 3px solid var(--lot-white);
+  border-bottom: 3px solid var(--lot-white);
+  border-radius: 3px;
+}
+
+.lot-brand-mark::after {
+  top: 8px;
+  right: 8px;
+  width: 11px;
+  height: 11px;
+  border: 3px solid #8af3e6;
+  border-radius: 4px;
+}
+
+.lot-brand-copy {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.lot-brand-title {
+  color: var(--lot-white);
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.logo-gradient.lot-brand {
+  display: none;
+}
+
+.lot-brand-subtitle {
+  margin-top: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.logo-gradient .lot-brand-title,
+.header__bottom.sticky .lot-brand-title {
+  color: var(--lot-heading);
+}
+
+.logo-gradient .lot-brand-subtitle,
+.header__bottom.sticky .lot-brand-subtitle {
+  color: #61768a;
+}
+
+.logo-gradient .lot-brand-mark,
+.header__bottom.sticky .lot-brand-mark {
+  border-color: rgba(11, 99, 206, 0.16);
+  background: linear-gradient(135deg, rgba(11, 99, 206, 0.08), rgba(34, 184, 169, 0.08));
+  box-shadow: 0 12px 24px rgba(15, 42, 70, 0.08);
+}
+
+.logo-gradient .lot-brand-mark::before,
+.header__bottom.sticky .lot-brand-mark::before {
+  border-left-color: var(--lot-heading);
+  border-bottom-color: var(--lot-heading);
+}
+
+.logo-gradient .lot-brand-mark::after,
+.header__bottom.sticky .lot-brand-mark::after {
+  border-color: var(--lot-teal);
+}
+
+.header__bottom.sticky .logo-gradient.lot-brand {
+  display: inline-flex;
+}
+
+.header__bottom.sticky .logo.lot-brand {
+  display: none;
+}
+
+.header__btn .lot-nav-cta {
+  min-width: 138px;
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.42);
+  color: var(--lot-white);
+}
+
+.header__btn .lot-nav-cta:hover {
+  background: var(--lot-white);
+  border-color: var(--lot-white);
+  color: var(--lot-navy);
+}
+
+.lot-lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 24px;
+}
+
+.lot-lang-switch a {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.lot-lang-switch a:hover,
+.lot-lang-switch a.active {
+  color: var(--lot-white);
+}
+
+.header__bottom.sticky .lot-lang-switch a {
+  color: #5c7185;
+}
+
+.header__bottom.sticky .lot-lang-switch a:hover,
+.header__bottom.sticky .lot-lang-switch a.active {
+  color: var(--lot-blue);
+}
+
+.lot-mobile-lang {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 18px 0 26px;
+}
+
+.lot-mobile-lang a {
+  color: var(--lot-white);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.header__bottom.sticky .header__btn .lot-nav-cta {
+  background: var(--lot-blue);
+  border-color: var(--lot-blue);
+  color: var(--lot-white);
+}
+
+.header__bottom.sticky .header__btn .lot-nav-cta:hover {
+  background: var(--lot-white);
+  color: var(--lot-blue);
+}
+
+.main-menu ul li a {
+  color: var(--lot-white);
+  text-transform: none;
+  letter-spacing: 0.02em;
+}
+
+.main-menu ul li > a {
+  position: relative;
+}
+
+.main-menu ul li > a::after {
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  content: "";
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--lot-teal), transparent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.main-menu ul li:hover > a,
+.main-menu ul li.lot-current > a {
+  color: #a8f0e7;
+}
+
+.main-menu ul li:hover > a::after,
+.main-menu ul li.lot-current > a::after {
+  transform: scaleX(1);
+}
+
+.header__bottom.sticky .main-menu ul li:hover > a,
+.header__bottom.sticky .main-menu ul li.lot-current > a {
+  color: var(--lot-blue);
+}
+
+.sidebar__tab .nav-link {
+  text-transform: none;
+}
+
+.lot-sidebar-copy {
+  margin-bottom: 22px;
+  color: #8ea0b3;
+  line-height: 1.8;
+}
+
+.lot-sidebar-list li {
+  margin-bottom: 18px;
+}
+
+.lot-sidebar-list li:last-child {
+  margin-bottom: 0;
+}
+
+.lot-sidebar-list .text span,
+.lot-sidebar-list .text a {
+  color: var(--lot-white);
+  line-height: 1.7;
+}
+
+.lot-sidebar-list .icon {
+  color: var(--lot-teal);
+}
+
+.lot-hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  padding: 220px 0 120px;
+  background:
+    radial-gradient(circle at 14% 18%, rgba(20, 208, 195, 0.18), transparent 22%),
+    radial-gradient(circle at 78% 14%, rgba(22, 125, 255, 0.34), transparent 28%),
+    radial-gradient(circle at 84% 80%, rgba(20, 208, 195, 0.14), transparent 24%),
+    linear-gradient(135deg, #04111d 0%, #08233a 36%, #0a3e67 72%, #0c5c88 100%);
+}
+
+.lot-hero::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background:
+    radial-gradient(circle at 48% 24%, rgba(147, 255, 244, 0.1), transparent 24%),
+    radial-gradient(circle at 72% 58%, rgba(22, 125, 255, 0.1), transparent 20%),
+    linear-gradient(120deg, rgba(3, 11, 20, 0.05) 0%, rgba(3, 11, 20, 0.56) 100%);
+  opacity: 1;
+}
+
+.lot-hero::after {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(147, 255, 244, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(147, 255, 244, 0.08) 1px, transparent 1px);
+  background-size: 72px 72px;
+  opacity: 0.5;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.92) 0%, rgba(0, 0, 0, 0.72) 62%, transparent 100%);
+}
+
+.lot-hero .hero__shape img {
+  opacity: 0.84;
+  filter: saturate(1.18) drop-shadow(0 0 20px rgba(22, 125, 255, 0.18));
+}
+
+.lot-hero .container,
+.lot-process-area .container {
+  position: relative;
+  z-index: 2;
+}
+
+.lot-hero .hero__content span {
+  display: inline-block;
+  margin-bottom: 18px;
+  color: #a4fff4;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.lot-hero .hero__content h1 {
+  color: var(--lot-white);
+  font-size: 66px;
+  line-height: 1.08;
+  margin-bottom: 26px;
+}
+
+.lot-hero .hero__content p {
+  max-width: 640px;
+  margin-bottom: 0;
+  color: #deebf6;
+  font-size: 18px;
+  line-height: 1.9;
+}
+
+.lot-hero .hero__content .lot-intro-lead {
+  margin-top: 18px;
+}
+
+.lot-chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 32px 0 38px;
+}
+
+.lot-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 16px;
+  border: 1px solid rgba(147, 255, 244, 0.18);
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(10, 62, 95, 0.18));
+  color: #e9fbff;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 14px 30px rgba(2, 13, 25, 0.12);
+}
+
+.lot-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.lot-hero-panel {
+  padding: 34px;
+  border: 1px solid rgba(147, 255, 244, 0.14);
+  border-radius: 24px;
+  background: linear-gradient(160deg, rgba(7, 27, 42, 0.82), rgba(8, 44, 68, 0.64));
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(16px);
+}
+
+.lot-hero-panel h3 {
+  color: var(--lot-white);
+  font-size: 28px;
+  margin-bottom: 14px;
+}
+
+.lot-hero-panel p {
+  color: #d0dfeb;
+  margin-bottom: 0;
+}
+
+.lot-panel-list {
+  margin-top: 26px;
+}
+
+.lot-panel-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 0;
+  border-top: 1px solid rgba(147, 255, 244, 0.12);
+}
+
+.lot-panel-list li:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.lot-panel-index {
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(20, 208, 195, 0.18);
+  color: #a8fff5;
+  font-size: 13px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lot-panel-copy strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--lot-white);
+  font-size: 16px;
+}
+
+.lot-panel-copy span {
+  display: block;
+  color: #d5e5f1;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.lot-contact-inline {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.lot-contact-inline a {
+  color: var(--lot-white);
+  font-weight: 600;
+}
+
+.lot-contact-inline a:hover {
+  color: #8af3e6;
+}
+
+.lot-hero-media {
+  position: relative;
+}
+
+.lot-hero-visual {
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.3);
+}
+
+.lot-hero-visual::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  border: 1px solid rgba(125, 243, 234, 0.14);
+  border-radius: 28px;
+  pointer-events: none;
+}
+
+.lot-hero-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.lot-hero-badge {
+  position: absolute;
+  left: -18px;
+  bottom: 58px;
+  padding: 18px 20px;
+  border: 1px solid rgba(147, 255, 244, 0.14);
+  border-radius: 18px;
+  background: linear-gradient(160deg, rgba(5, 24, 38, 0.94), rgba(7, 39, 61, 0.84));
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(12px);
+}
+
+.lot-hero-badge strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--lot-white);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.lot-hero-badge span {
+  display: block;
+  color: #d5e4ef;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.lot-mini-points {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 34px;
+}
+
+.lot-mini-point {
+  padding: 18px 16px;
+  border: 1px solid rgba(147, 255, 244, 0.12);
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(8, 48, 74, 0.18));
+  box-shadow: 0 20px 40px rgba(3, 12, 23, 0.1);
+}
+
+.lot-mini-point strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--lot-white);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.lot-mini-point span {
+  display: block;
+  color: #d6e4ef;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.lot-signal-band {
+  position: relative;
+  margin-top: -78px;
+  z-index: 4;
+}
+
+.lot-signal-shell {
+  position: relative;
+  overflow: hidden;
+  padding: 42px 42px 34px;
+  border: 1px solid rgba(147, 255, 244, 0.14);
+  border-radius: 32px;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(22, 125, 255, 0.16), transparent 28%),
+    linear-gradient(135deg, rgba(5, 19, 33, 0.98) 0%, rgba(7, 36, 58, 0.96) 52%, rgba(10, 71, 110, 0.92) 100%);
+  box-shadow: 0 34px 84px rgba(3, 16, 30, 0.26);
+  visibility: visible !important;
+}
+
+.lot-signal-shell::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(147, 255, 244, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(147, 255, 244, 0.07) 1px, transparent 1px);
+  background-size: 46px 46px;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.lot-signal-shell::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(22, 125, 255, 0.34), transparent 68%);
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.lot-signal-head,
+.lot-signal-foot,
+.lot-signal-shell .row {
+  position: relative;
+  z-index: 2;
+}
+
+.lot-signal-head {
+  max-width: 760px;
+  margin-bottom: 30px;
+}
+
+.lot-signal-head span {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--lot-cyan);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.lot-signal-head span::before {
+  content: "";
+  width: 38px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--lot-cyan) 100%);
+}
+
+.lot-signal-head h2 {
+  margin: 18px 0 16px;
+  color: var(--lot-white);
+  font-size: 42px;
+  line-height: 1.16;
+}
+
+.lot-signal-head p {
+  max-width: 680px;
+  margin-bottom: 0;
+  color: #c9d8e6;
+}
+
+.lot-signal-card {
+  position: relative;
+  height: 100%;
+  padding: 28px 22px 24px;
+  border: 1px solid rgba(147, 255, 244, 0.12);
+  border-radius: 22px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.09), rgba(6, 48, 73, 0.22));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 18px 36px rgba(2, 12, 23, 0.08);
+}
+
+.lot-signal-card::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  border-radius: 22px;
+  border: 1px solid rgba(147, 255, 244, 0.08);
+  pointer-events: none;
+}
+
+.lot-signal-no {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: rgba(147, 255, 244, 0.12);
+  color: var(--lot-cyan);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.lot-signal-card strong {
+  display: block;
+  margin: 18px 0 12px;
+  color: var(--lot-white);
+  font-size: 20px;
+  line-height: 1.3;
+}
+
+.lot-signal-card p {
+  margin-bottom: 0;
+  color: #c1d2e1;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.lot-signal-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(147, 255, 244, 0.12);
+}
+
+.lot-signal-foot span {
+  color: var(--lot-cyan);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.lot-signal-foot p {
+  margin-bottom: 0;
+  color: #d4e2ee;
+  text-align: right;
+}
+
+.lot-service-summary {
+  position: relative;
+  background:
+    radial-gradient(circle at 10% 0%, rgba(20, 208, 195, 0.1), transparent 18%),
+    radial-gradient(circle at 88% 10%, rgba(22, 125, 255, 0.1), transparent 22%),
+    linear-gradient(180deg, #f3f9ff 0%, #eaf4ff 100%);
+}
+
+.lot-service-summary::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(22, 125, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(22, 125, 255, 0.035) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+}
+
+.lot-section-copy {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.lot-service-card,
+.lot-info-card,
+.lot-pillar-card,
+.lot-detail-card,
+.lot-contact-card,
+.lot-contact-help {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  border: 1px solid var(--lot-border);
+  border-radius: 22px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.99), rgba(237, 247, 255, 0.98));
+  box-shadow: 0 20px 46px rgba(7, 41, 72, 0.08);
+}
+
+.lot-service-card::before,
+.lot-info-card::before,
+.lot-pillar-card::before,
+.lot-detail-card::before,
+.lot-contact-card::before,
+.lot-contact-help::before,
+.lot-text-slab::before,
+.lot-scenario-card::before,
+.lot-illustration-card::before,
+.lot-contact-panel::before,
+.lot-process-card::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--lot-blue), var(--lot-cyan));
+  opacity: 0.95;
+}
+
+.lot-service-card {
+  padding: 36px 30px;
+}
+
+.lot-service-card .services__icon img,
+.lot-contact-help .contact__icon img {
+  width: 54px;
+}
+
+.lot-service-card .services__content h3 {
+  margin-bottom: 14px;
+  font-size: 24px;
+}
+
+.lot-service-card:hover,
+.lot-info-card:hover,
+.lot-pillar-card:hover,
+.lot-detail-card:hover,
+.lot-contact-card:hover,
+.lot-contact-help:hover {
+  transform: translateY(-6px);
+  border-color: rgba(20, 208, 195, 0.26);
+  box-shadow: 0 26px 62px rgba(8, 45, 79, 0.15);
+}
+
+.lot-info-card,
+.lot-detail-card,
+.lot-contact-card {
+  padding: 30px;
+}
+
+.lot-info-card h3,
+.lot-detail-card h3,
+.lot-contact-card h3 {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.lot-check-list li,
+.lot-bullet-list li {
+  position: relative;
+  padding-left: 26px;
+  margin-bottom: 14px;
+  color: var(--lot-text);
+  line-height: 1.8;
+}
+
+.lot-check-list li:last-child,
+.lot-bullet-list li:last-child {
+  margin-bottom: 0;
+}
+
+.lot-check-list li::before,
+.lot-bullet-list li::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--lot-teal);
+  font-weight: 800;
+}
+
+.lot-check-list li::before {
+  content: "✓";
+}
+
+.lot-bullet-list li::before {
+  content: "•";
+}
+
+.lot-pillar-card {
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
+.lot-pillar-card .lot-pillar-no {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: rgba(22, 125, 255, 0.12);
+  color: var(--lot-blue);
+  font-weight: 800;
+  margin-bottom: 18px;
+  box-shadow: inset 0 0 0 1px rgba(22, 125, 255, 0.12);
+}
+
+.lot-process-area {
+  position: relative;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(20, 208, 195, 0.12), transparent 20%),
+    radial-gradient(circle at 86% 16%, rgba(22, 125, 255, 0.18), transparent 22%),
+    linear-gradient(135deg, #061423 0%, #0b2842 48%, #0a4065 100%);
+}
+
+.lot-process-area::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(147, 255, 244, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(147, 255, 244, 0.07) 1px, transparent 1px);
+  background-size: 56px 56px;
+  opacity: 0.34;
+}
+
+.lot-process-area::after {
+  position: absolute;
+  content: "";
+  right: -120px;
+  bottom: -140px;
+  width: 360px;
+  height: 360px;
+  background: radial-gradient(circle, rgba(20, 208, 195, 0.16), transparent 70%);
+  filter: blur(8px);
+  pointer-events: none;
+}
+
+.lot-process-area .section__title h2,
+.lot-process-area .section__title p {
+  color: var(--lot-white);
+}
+
+.lot-process-card {
+  height: 100%;
+  padding: 30px;
+  border: 1px solid rgba(147, 255, 244, 0.14);
+  border-radius: 22px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.11), rgba(7, 43, 66, 0.22));
+  backdrop-filter: blur(10px);
+  box-shadow: 0 22px 48px rgba(2, 11, 22, 0.1);
+}
+
+.lot-process-step {
+  display: inline-block;
+  color: #88f4e7;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.lot-process-card h3 {
+  margin: 12px 0 14px;
+  color: var(--lot-white);
+  font-size: 28px;
+}
+
+.lot-process-card p {
+  margin-bottom: 0;
+  color: #d4e1ec;
+}
+
+.lot-illustration-card {
+  position: relative;
+  overflow: hidden;
+  padding: 18px;
+  border: 1px solid var(--lot-border);
+  border-radius: 28px;
+  background: linear-gradient(180deg, #fafdff 0%, #edf6ff 100%);
+  box-shadow: 0 18px 42px rgba(7, 41, 72, 0.08);
+}
+
+.lot-illustration-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.lot-text-slab {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  padding: 34px;
+  border: 1px solid var(--lot-border);
+  border-radius: 24px;
+  background: linear-gradient(180deg, #ffffff 0%, #eff7ff 100%);
+  box-shadow: 0 18px 42px rgba(7, 41, 72, 0.08);
+}
+
+.lot-text-slab h3 {
+  margin-bottom: 16px;
+  font-size: 24px;
+}
+
+.lot-scenario-card {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  padding: 32px;
+  border: 1px solid var(--lot-border);
+  border-radius: 22px;
+  background: linear-gradient(180deg, #ffffff 0%, #eff7ff 100%);
+  box-shadow: 0 18px 42px rgba(7, 41, 72, 0.08);
+}
+
+.lot-scenario-card h3 {
+  font-size: 24px;
+  margin-bottom: 14px;
+}
+
+.lot-scenario-card p {
+  margin-bottom: 0;
+}
+
+.lot-faq-area .card {
+  border: 1px solid var(--lot-border);
+  border-radius: 18px;
+  box-shadow: none;
+  margin-bottom: 18px;
+  overflow: hidden;
+}
+
+.lot-faq-area .card:last-child {
+  margin-bottom: 0;
+}
+
+.lot-faq-area .card-header {
+  padding: 0;
+  border-bottom: 0;
+  background: var(--lot-white);
+}
+
+.lot-faq-area .btn-link {
+  width: 100%;
+  padding: 26px 30px;
+  color: var(--lot-heading);
+  font-weight: 700;
+  text-align: left;
+  white-space: normal;
+}
+
+.lot-faq-area .btn-link:hover,
+.lot-faq-area .btn-link:focus {
+  text-decoration: none;
+  color: var(--lot-blue);
+}
+
+.lot-faq-area .card-body {
+  padding: 0 30px 26px;
+  color: var(--lot-text);
+}
+
+.lot-cta {
+  background:
+    linear-gradient(135deg, rgba(4, 18, 33, 0.88), rgba(8, 45, 71, 0.84), rgba(10, 78, 120, 0.8)),
+    url("../img/cta/cta-bg.jpg") center/cover no-repeat;
+}
+
+.lot-cta span,
+.lot-cta h1 {
+  color: var(--lot-white);
+}
+
+.lot-cta span {
+  opacity: 0.72;
+}
+
+.lot-cta::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(147, 255, 244, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(147, 255, 244, 0.06) 1px, transparent 1px);
+  background-size: 70px 70px;
+  opacity: 0.36;
+}
+
+.lot-page-title::before,
+.page__title::before {
+  background:
+    radial-gradient(circle at 18% 18%, rgba(20, 208, 195, 0.14), transparent 22%),
+    radial-gradient(circle at 82% 18%, rgba(22, 125, 255, 0.24), transparent 28%),
+    linear-gradient(135deg, rgba(4, 18, 33, 0.94) 0%, rgba(9, 54, 86, 0.9) 100%);
+}
+
+.lot-page-title::after,
+.page__title::after {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(147, 255, 244, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(147, 255, 244, 0.07) 1px, transparent 1px);
+  background-size: 62px 62px;
+  opacity: 0.42;
+  pointer-events: none;
+}
+
+.page__title-content h2,
+.page__title-content h3 {
+  font-size: 58px;
+}
+
+.page__title-content,
+.page__title .container {
+  position: relative;
+  z-index: 2;
+}
+
+.page__title-content .breadcrumb-item,
+.page__title-content .breadcrumb-item.active,
+.page__title-content .breadcrumb-item:hover {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.page__title-content .breadcrumb-item.active::before {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.lot-contact-help {
+  padding: 34px 28px;
+  text-align: left;
+}
+
+.lot-contact-help .contact__icon {
+  margin-bottom: 26px;
+}
+
+.lot-contact-help h3 {
+  margin-bottom: 14px;
+  font-size: 24px;
+}
+
+.lot-contact-panel {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  padding: 34px;
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(22, 125, 255, 0.18), transparent 28%),
+    linear-gradient(135deg, #061524 0%, #0a2943 52%, #0d476e 100%);
+  box-shadow: 0 24px 68px rgba(4, 22, 38, 0.22);
+}
+
+.lot-contact-panel h3 {
+  color: var(--lot-white);
+  font-size: 30px;
+  margin-bottom: 16px;
+}
+
+.lot-contact-panel p,
+.lot-contact-panel li,
+.lot-contact-panel a {
+  color: #d4e1ec;
+}
+
+.lot-contact-panel a:hover {
+  color: #97f1e8;
+}
+
+.lot-contact-panel ul {
+  margin: 26px 0;
+}
+
+.lot-contact-panel li {
+  margin-bottom: 16px;
+  padding-left: 24px;
+  position: relative;
+}
+
+.lot-contact-panel li::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: "•";
+  color: #97f1e8;
+  font-weight: 800;
+}
+
+.lot-contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.lot-contact-actions .z-btn {
+  min-width: 180px;
+}
+
+.lot-contact-visual {
+  margin-top: 28px;
+  border: 1px solid rgba(147, 255, 244, 0.1);
+  border-radius: 24px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.lot-contact-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.footer__area {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #04101b 0%, #071a2b 100%);
+}
+
+.footer__area::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(147, 255, 244, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(147, 255, 244, 0.04) 1px, transparent 1px);
+  background-size: 62px 62px;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.lot-footer-brand p,
+.footer__links ul li a,
+.footer__copyright-text p,
+.footer__info ul li .text span,
+.footer__info ul li .text a {
+  color: #bed0e0;
+}
+
+.footer__widget-title h4,
+.footer__copyright-text a,
+.footer__info ul li .icon {
+  color: var(--lot-white);
+}
+
+.footer__links ul li a:hover,
+.footer__info ul li .text a:hover,
+.footer__copyright-text a:hover {
+  color: #8af3e6;
+}
+
+.footer__copyright {
+  border-top-color: rgba(255, 255, 255, 0.08);
+}
+
+.footer__social {
+  display: none;
+}
+
+@media (max-width: 1199px) {
+  .lot-hero .hero__content h1 {
+    font-size: 56px;
+  }
+
+  .lot-brand-title {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 991px) {
+  .lot-hero {
+    min-height: auto;
+    padding: 180px 0 90px;
+  }
+
+  .lot-hero .hero__content h1 {
+    font-size: 46px;
+  }
+
+  .lot-hero-panel {
+    margin-top: 40px;
+  }
+
+  .lot-hero-badge {
+    position: static;
+    margin-top: 22px;
+  }
+
+  .lot-mini-points {
+    grid-template-columns: 1fr;
+  }
+
+  .lot-signal-band {
+    margin-top: -34px;
+  }
+
+  .lot-signal-head h2 {
+    font-size: 34px;
+  }
+
+  .lot-signal-card {
+    margin-bottom: 20px;
+  }
+
+  .lot-signal-foot {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .lot-signal-foot p {
+    text-align: left;
+  }
+
+  .page__title-content h2,
+  .page__title-content h3 {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 767px) {
+  .lot-hero {
+    padding: 160px 0 80px;
+  }
+
+  .lot-hero .hero__content h1 {
+    font-size: 38px;
+  }
+
+  .lot-hero .hero__content p {
+    font-size: 16px;
+  }
+
+  .lot-hero-panel,
+  .lot-info-card,
+  .lot-detail-card,
+  .lot-contact-card,
+  .lot-contact-panel,
+  .lot-process-card,
+  .lot-pillar-card,
+  .lot-contact-help,
+  .lot-text-slab,
+  .lot-scenario-card,
+  .lot-signal-shell {
+    padding: 26px;
+  }
+
+  .lot-signal-head h2 {
+    font-size: 28px;
+  }
+
+  .page__title-content h2,
+  .page__title-content h3 {
+    font-size: 40px;
+  }
+
+  .lot-contact-actions .z-btn {
+    width: 100%;
+  }
+
+  .lot-lang-switch {
+    display: none;
+  }
+}
+
+@media (max-width: 575px) {
+  .lot-brand-link {
+    gap: 8px;
+  }
+
+  .lot-brand-mark {
+    flex-basis: 34px;
+    width: 34px;
+    height: 34px;
+    border-radius: 11px;
+  }
+
+  .lot-brand-mark::before {
+    left: 8px;
+    bottom: 8px;
+    width: 11px;
+    height: 11px;
+  }
+
+  .lot-brand-mark::after {
+    top: 7px;
+    right: 7px;
+    width: 9px;
+    height: 9px;
+  }
+
+  .lot-brand-title {
+    font-size: 12px;
+    letter-spacing: 0.04em;
+  }
+
+  .lot-brand-subtitle {
+    font-size: 10px;
+    letter-spacing: 0.05em;
+  }
+
+  .lot-signal-band {
+    margin-top: -18px;
+  }
+
+  .lot-chip {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .lot-hero .hero__content h1 {
+    font-size: 34px;
+  }
+
+  .page__title-content h2,
+  .page__title-content h3 {
+    font-size: 34px;
+  }
+}
