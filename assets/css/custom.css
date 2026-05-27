@@ -12,6 +12,19 @@
   --lot-white: #ffffff;
 }
 
+html,
+body {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+@supports not (overflow-x: clip) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+}
+
 body,
 p,
 a,
@@ -35,7 +48,8 @@ h6 {
     "Microsoft YaHei", "Noto Sans SC", sans-serif;
   color: var(--lot-heading);
   font-weight: 700;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
+  text-wrap: balance;
 }
 
 body {
@@ -87,6 +101,11 @@ footer {
 p {
   color: var(--lot-text);
   line-height: 1.9;
+}
+
+img,
+svg {
+  max-width: 100%;
 }
 
 *::selection {
@@ -159,6 +178,28 @@ p {
   width: 36px;
   height: 1px;
   background: linear-gradient(90deg, transparent 0%, var(--lot-cyan) 100%);
+}
+
+.section__title h1,
+.section__title h2,
+.section__title-2 h2,
+.section__title-3 h2,
+.section-title h2,
+.lot-signal-head h2,
+.page__title-content h2,
+.page__title-content h3,
+.cta__content h1 {
+  text-wrap: balance;
+  overflow-wrap: normal;
+}
+
+.section__title.text-center h2,
+.section__title-2.text-center h2,
+.section__title-3.text-center h2,
+.section-title.text-center h2 {
+  max-width: 980px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .header__area.header__transparent {
@@ -399,6 +440,31 @@ p {
   color: var(--lot-blue);
 }
 
+.sidebar__area {
+  right: 0;
+  width: min(320px, calc(100vw - 28px));
+  max-width: calc(100vw - 28px);
+  overflow-x: hidden;
+  clip-path: inset(0 0 0 100%);
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.sidebar__area.sidebar-opened {
+  clip-path: inset(0);
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.sidebar__wrapper,
+.sidebar__content,
+.sidebar__tab,
+.mobile-menu {
+  min-width: 0;
+}
+
 .sidebar__tab .nav-link {
   text-transform: none;
 }
@@ -425,6 +491,10 @@ p {
 
 .lot-sidebar-list .icon {
   color: var(--lot-teal);
+}
+
+.lot-mobile-break {
+  display: none;
 }
 
 .lot-hero {
@@ -481,6 +551,14 @@ p {
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
+}
+
+.lot-hero .hero__content .lot-mobile-break {
+  display: none;
+}
+
+.lot-hero .hero__content .lot-mobile-separator {
+  display: inline;
 }
 
 .lot-hero .hero__content h1 {
@@ -1002,6 +1080,7 @@ p {
 
 .lot-process-area {
   position: relative;
+  overflow: hidden;
   background:
     radial-gradient(circle at 12% 18%, rgba(20, 208, 195, 0.12), transparent 20%),
     radial-gradient(circle at 86% 16%, rgba(22, 125, 255, 0.18), transparent 22%),
@@ -1366,6 +1445,30 @@ p {
 }
 
 @media (max-width: 991px) {
+  .main-menu {
+    display: none;
+  }
+
+  .header__bottom-right {
+    width: 100%;
+    justify-content: flex-end !important;
+  }
+
+  .sidebar__menu {
+    display: flex !important;
+    align-items: center;
+    justify-content: flex-end;
+    margin-left: auto;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .sidebar-toggle-btn {
+    display: block;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
   .lot-hero {
     min-height: auto;
     padding: 180px 0 90px;
@@ -1461,6 +1564,47 @@ p {
 }
 
 @media (max-width: 575px) {
+  .header__bottom .row > [class*="col-"]:first-child {
+    flex: 0 0 70%;
+    max-width: 70%;
+  }
+
+  .header__bottom .row > [class*="col-"]:last-child {
+    flex: 0 0 30%;
+    max-width: 30%;
+  }
+
+  .header__bottom .container {
+    position: relative;
+  }
+
+  .header__bottom .container::after {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    display: block;
+    width: 26px;
+    height: 18px;
+    content: "";
+    background:
+      linear-gradient(var(--lot-white), var(--lot-white)) 0 0 / 26px 2px no-repeat,
+      linear-gradient(var(--lot-white), var(--lot-white)) 0 8px / 26px 2px no-repeat,
+      linear-gradient(var(--lot-white), var(--lot-white)) 0 16px / 26px 2px no-repeat;
+    pointer-events: none;
+    transform: translateY(-50%);
+    z-index: 10;
+  }
+
+  .header__bottom .sidebar__menu {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    width: 32px;
+    height: 32px;
+    z-index: 5;
+    transform: translateY(-50%);
+  }
+
   .lot-brand-link {
     gap: 8px;
   }
@@ -1496,6 +1640,26 @@ p {
     letter-spacing: 0.05em;
   }
 
+  .header__bottom .lot-brand-link {
+    max-width: 100%;
+  }
+
+  .header__bottom .lot-brand-subtitle {
+    display: none;
+  }
+
+  .sidebar-toggle-btn {
+    margin-left: 0;
+    width: 32px;
+    height: 28px;
+  }
+
+  .sidebar-toggle-btn .line {
+    width: 26px;
+    height: 2px;
+    margin: 5px auto;
+  }
+
   .lot-signal-band {
     margin-top: -18px;
   }
@@ -1506,7 +1670,25 @@ p {
   }
 
   .lot-hero .hero__content h1 {
-    font-size: 34px;
+    font-size: 31px;
+    line-height: 1.18;
+  }
+
+  .lot-hero .hero__content span {
+    display: block;
+    max-width: 100%;
+    font-size: 12px;
+    line-height: 1.75;
+    letter-spacing: 0.08em;
+    white-space: normal;
+  }
+
+  .lot-hero .hero__content .lot-mobile-break {
+    display: inline;
+  }
+
+  .lot-hero .hero__content .lot-mobile-separator {
+    display: none;
   }
 
   .page__title-content h2,

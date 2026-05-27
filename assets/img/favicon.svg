@@ -2,18 +2,16 @@
   <defs>
     <linearGradient id="bg" x1="4" y1="4" x2="60" y2="60" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#102845"/>
-      <stop offset="0.48" stop-color="#0b1730"/>
+      <stop offset="0.55" stop-color="#0b1730"/>
       <stop offset="1" stop-color="#06101f"/>
     </linearGradient>
-    <linearGradient id="mark" x1="10" y1="9" x2="55" y2="55" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#19d3ff"/>
-      <stop offset="0.55" stop-color="#35f2c8"/>
-      <stop offset="1" stop-color="#f7fbff"/>
+    <linearGradient id="glass" x1="10" y1="8" x2="54" y2="58" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity=".04"/>
     </linearGradient>
   </defs>
-  <rect x="2" y="2" width="60" height="60" rx="14" fill="url(#bg)"/>
-  <rect x="3.5" y="3.5" width="57" height="57" rx="12.5" fill="none" stroke="#48f0df" stroke-opacity=".55" stroke-width="3"/>
-  <path d="M13 12h10.5v29.5H39V52H13V12Z" fill="url(#mark)"/>
-  <circle cx="42" cy="27" r="12" fill="none" stroke="#f7fbff" stroke-width="9"/>
-  <circle cx="42" cy="27" r="4.5" fill="#06101f"/>
+  <rect x="2" y="2" width="60" height="60" rx="15" fill="url(#bg)"/>
+  <rect x="5" y="5" width="54" height="54" rx="13" fill="url(#glass)" stroke="#ffffff" stroke-opacity=".18" stroke-width="2"/>
+  <path d="M18 27v18h18" fill="none" stroke="#f7fbff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="35" y="14" width="15" height="15" rx="5" fill="none" stroke="#8af3e6" stroke-width="5"/>
 </svg>
